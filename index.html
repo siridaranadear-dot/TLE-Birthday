@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ของขวัญวันเกิดเติ้ล</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg"></canvas><canvas id="fx"></canvas>
+
+<!-- ===== หน้าล็อกอิน ===== -->
+<div id="login" class="screen">
+  <svg viewBox="0 0 120 120" aria-hidden="true">
+    <path d="M60 8l8 14h22l12 22v34l-14 18H32L18 78V44l12-22h22z" fill="#0d0204" stroke="#ff1f2d" stroke-width="3"/>
+    <path d="M30 50h60l-8 18H38z" fill="#ff1f2d"/><rect x="50" y="92" width="20" height="14" fill="#7a0010"/>
+    <path d="M8 40l14-6v22zM112 40l-14-6v22z" fill="#ff1f2d"/>
+  </svg>
+  <h1>SYSTEM LOCKED</h1>
+  <p>ระบบนี้ถูกล็อกไว้เฉพาะเติ้ลคนเดียว กรอกรหัสวันเกิดของตัวเองเพื่อเข้าสู่ระบบ</p>
+  <div class="box" id="box">
+    <input id="pw" type="password" inputmode="numeric" autocomplete="off" placeholder="DDMMYYYY" aria-label="รหัสผ่าน">
+    <button id="go">ปลดล็อก</button>
+  </div>
+  <div id="err" role="alert"></div>
+  <p style="font-size:.85rem">คำใบ้: วัน เดือน ปี พ.ศ. เกิด เรียงติดกัน 8 หลัก</p>
+</div>
+
+<!-- ===== จอเปิดระบบ ===== -->
+<div id="boot"><div class="hud" id="bt"></div><div class="bar"><i id="bi"></i></div></div>
+
+<!-- ===== เนื้อหาหลัก ===== -->
+<main id="main" class="screen">
+  <section class="hero">
+    <div class="hud" style="color:var(--red);letter-spacing:.3em">ACCESS GRANTED</div>
+    <h1>HAPPY BIRTHDAY<br>เติ้ล</h1>
+    <p class="sub">28 พฤศจิกายน · ปีที่ 18 ของคนสำคัญ</p>
+    <div class="count" id="count" aria-live="off"></div>
+    <p class="sub" id="wait">ข้อความถึงเติ้ลจะเปิดเมื่อครบเวลานับถอยหลัง</p>
+  </section>
+
+
+  <div id="reveal" hidden>
+  <section>
+    <h2>ข้อความถึงเติ้ล</h2>
+    <div class="letter">
+      <p>สุขสันต์วันเกิดนะเติ้ล วันนี้เธออายุครบ 18 ปีแล้ว</p>
+      <p>ใส่ข้อความจากใจของคุณตรงนี้ เช่น สิ่งที่ประทับใจ สิ่งที่อยากขอบคุณ และสิ่งที่อยากทำด้วยกันในปีต่อไป</p>
+      <p>รักเธอนะ</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>บันทึกภารกิจของเรา</h2>
+    <div class="tl">
+      <div><b>วันที่เราเจอกัน</b><br>ใส่เรื่องราวตรงนี้ (แก้วันที่และข้อความได้)</div>
+      <div><b>วันที่เป็นแฟนกัน</b><br>ใส่เรื่องราวตรงนี้</div>
+      <div><b>เหตุการณ์ที่ไม่มีวันลืม</b><br>ใส่เรื่องราวตรงนี้</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>คลังภาพ</h2>
+    <div class="gal">
+      <figure><img src="photo1.jpg" alt="" onerror="this.remove()">วางรูปชื่อ photo1.jpg ไว้โฟลเดอร์เดียวกับไฟล์นี้</figure>
+      <figure><img src="photo2.jpg" alt="" onerror="this.remove()">photo2.jpg</figure>
+      <figure><img src="photo3.jpg" alt="" onerror="this.remove()">photo3.jpg</figure>
+    </div>
+  </section>
+
+  <section class="fin">
+    <h2>ภารกิจสุดท้ายของวันนี้</h2>
+    <p>กดปุ่มเพื่อฉลองวันเกิดของเติ้ล</p>
+    <button id="boom">เริ่มฉลอง</button>
+  </section>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
